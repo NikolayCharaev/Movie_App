@@ -1,0 +1,40 @@
+
+.header{
+    background-color: rgb(13, 25, 59);
+    &__wrapper{
+        margin: 0 10px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .search{
+        margin-right: 90px;
+        &__input{
+            width: 400px;
+            padding: 10px;
+            border: none;
+            border-radius: 7px;
+            &::placeholder{
+                margin-left: 20px;
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+
+        &__button{
+            margin-left: 10px;
+            border: none;
+            border-radius: 7px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            transition: background-color .2s ease-in;
+            &:hover{
+                background-color: rgb(145, 135, 235);
+            }
+        }
+    }
+   
+}
