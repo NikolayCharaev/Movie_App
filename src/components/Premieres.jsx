@@ -44,9 +44,9 @@ const Premieres = () => {
       <h1>новинки {year} года</h1>
       <div className="premieres__wrapper">
         <Slider  {...settings}>
-          {premieresItems.map((elem) => {
+          {premieresItems.map((elem, index) => {
             return (
-              <div className='premieres__cart'> 
+              <div key={index} className='premieres__cart'> 
                 <img src={elem.posterUrl} alt="" />
               </div>
             )

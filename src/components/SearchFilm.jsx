@@ -19,10 +19,13 @@ const SearchFilm = () => {
             return await axios
             .get(`https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${value}`, {
               headers: {
+                // 'X-API-KEY': 'cthulhu',
+                'Content-type' : 'application/json',
                 'X-API-KEY': '6095320d-2104-4268-befd-2890bc14af9e',
               },
             })
             .then((res) => {
+                console.log(res)
                  dispatch(setSearchFilm(res.data.films))
               })
             .catch((err) => console.log(err));
