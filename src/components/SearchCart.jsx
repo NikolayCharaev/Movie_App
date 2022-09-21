@@ -11,7 +11,7 @@ const SearchCart = () => {
   function addRatingClass(rating) {
     if (rating >= 8 || rating > 7) {
       return 'cart__rating green';
-    } else if (rating <= 6 || rating < 7) {
+    } else if (rating <= 6 || rating <= 7) {
       return 'cart__rating yellow';
     } else if (rating <= 4) {
       return 'cart__rating red';

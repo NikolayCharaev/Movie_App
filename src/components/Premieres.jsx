@@ -18,7 +18,7 @@ const Premieres = () => {
         `https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=${year}&month=JANUARY`,
         {
           headers: {
-            'X-API-KEY': '6095320d-2104-4268-befd-2890bc14af9e',
+            'X-API-KEY': process.env.REACT_APP_KEY,
           },
         },
       )

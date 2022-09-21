@@ -3,6 +3,7 @@ import './scss/styles.scss';
 import Header from './components/Header';
 import Premieres from './components/Premieres';
 import SearchCart from './components/SearchCart';
+import RandomFact from './components/RandomFact';
 
 function App() {
   return (
@@ -12,7 +13,12 @@ function App() {
         <div className="container">
           <SearchCart />
         </div>
+        <div className="sliders__wrapper">
         <Premieres />
+        <div className="sliders__wrapper-bottom">
+        <RandomFact/>
+        </div>
+        </div>
       </div>
     </>
   );

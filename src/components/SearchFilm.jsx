@@ -14,14 +14,12 @@ const SearchFilm = () => {
       dispatch(setSearchValue(e.target.value));
     }
   }
-    async function topFilms() {
+    async function newFilms() {
         if (value.length > 0) {
             return await axios
             .get(`https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${value}`, {
               headers: {
-                // 'X-API-KEY': 'cthulhu',
-                'Content-type' : 'application/json',
-                'X-API-KEY': '6095320d-2104-4268-befd-2890bc14af9e',
+                'X-API-KEY': process.env.REACT_APP_KEY,
               },
             })
             .then((res) => {
@@ -34,7 +32,7 @@ const SearchFilm = () => {
       }
 
   useEffect(() => {
-    topFilms();
+    newFilms();
   }, []);
 
   return (
@@ -50,7 +48,7 @@ const SearchFilm = () => {
       <button
         className="search__button"
         onClick={() => {
-          topFilms();
+          newFilms();
         }}>
         найти
       </button>
