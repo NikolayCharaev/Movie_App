@@ -10,7 +10,7 @@ const Premieres = () => {
   const year = new Date().getFullYear();
   const dispatch = useDispatch();
   const premieresItems = useSelector((state) => state.premieres.items);
-  console.log(premieresItems);
+  const searchFilmsData = useSelector(state => state.searchSlice.items)
 
   async function newPremieres() {
     return await axios
@@ -34,14 +34,13 @@ const Premieres = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    // centerPadding: "60px",
-    slidesToShow: 5,
+    slidesToShow: 9,
     arrows: false,
     autoplay: true,
     speed: 500
   };
   return (
-    <div className="premieres">
+    <div className={searchFilmsData.length > 0 ? 'premieres to-bottom'  : 'premieres'}>
       <h1>новинки {year} года</h1>
       <div className="premieres__wrapper">
         <Slider  {...settings}>

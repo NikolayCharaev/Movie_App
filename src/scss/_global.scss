@@ -9,14 +9,24 @@ body {
   max-width: 1630px;
   margin: 0 auto;
   padding: 0 15px;
-//   -webkit-box-shadow: 0px 0px 21px -5px rgba(233, 238, 242, 0.41);
-//   -moz-box-shadow: 0px 0px 21px -5px rgba(233, 238, 242, 0.41);
-//   box-shadow: 0px 0px 21px -5px rgba(233, 238, 242, 0.41);
-//   height: 100vh;
 }
 
-.logo{
-    width: 40px;
-    height: 40px;
+.none {
+  display: none;
 }
 
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.main {
+  height: 100vh;
+  position: relative;
+  .to-bottom {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 90px;
+  }
+}
