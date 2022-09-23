@@ -11,6 +11,12 @@ body {
   padding: 0 15px;
 }
 
+.container__big {
+  max-width: 1930px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .none {
   display: none;
 }
@@ -40,3 +46,8 @@ body {
   display: none;
   max-width: 50%;
 }
+
+.sliders__wrapper-bottom{
+  // position: absolute;
+}
+

@@ -16,7 +16,9 @@ function App() {
         <div className="sliders__wrapper">
         <Premieres />
         <div className="sliders__wrapper-bottom">
-        <RandomFact/>
+        <div className="container__big">
+        {/* <RandomFact/> */}
+        </div>
         </div>
         </div>
       </div>

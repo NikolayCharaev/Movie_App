@@ -24,5 +24,6 @@ export const randomFactSlice = createSlice({
   },
 });
 
-export const { setRandomFactId, setRandomFactText, setRandomFactImage } = randomFactSlice.actions;
+export const { setRandomFactId, setRandomFactText, setRandomFactImage,  } =
+  randomFactSlice.actions;
 export default randomFactSlice.reducer;

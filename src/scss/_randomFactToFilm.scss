@@ -1,0 +1,32 @@
+
+
+.interesting {
+  margin-top: 50px;
+  width: 100%;
+  width: 50%;
+  height: 50%;
+//   position: absolute;
+  &__wrapper {
+     
+  }
+  &__title{
+      margin-bottom: 20px;
+  }
+  &__item {
+
+    &-img {
+        width: 800px;
+        height: 400px;
+    }
+    &-text {
+      position: absolute;
+      width: 800px;
+      font-size: 20px;
+      text-align: center;
+      bottom: 30px;
+      background-color: rgba(0,0,0, 0.5);
+      padding: 20px;
+      
+    }
+  }
+}
