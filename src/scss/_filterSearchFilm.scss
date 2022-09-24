@@ -1,6 +1,38 @@
-.filter{
-    width: 50%;
-    &__wrapper{
-        text-align: center;
+.filter {
+  width: 50%;
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__item-box {
+    p {
+      margin-bottom: 10px;
     }
+    display: flex;
+    max-width: 900px;
+    justify-content: space-around;
+    align-items: center;
+
+    button {
+      // margin-right: 80px;
+      padding: 10px 40px;
+    }
+  }
+  &__item-select {
+    select {
+      padding: 5px;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 4px;
+    }
+  }
+  &__item-year {
+    max-width: 300px;
+    input {
+      width: 100px;
+      margin-left: 5px;
+    }
+   
+  }
 }

@@ -5,7 +5,7 @@ import Premieres from './components/Premieres';
 import SearchCart from './components/SearchCart';
 import RandomFact from './components/RandomFact';
 import FilterSearchFilm from './components/FilterSearchFilm';
-
+import Test from './components/Test';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
         </div>
         </div>
       </div>
+      <Test/>
     </>
   );
 }
