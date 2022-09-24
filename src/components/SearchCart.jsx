@@ -3,9 +3,7 @@ import { setCartClassText } from '../redux/search/search';
 import { useSelector, useDispatch } from 'react-redux';
 
 const SearchCart = () => {
-
   const dispatch = useDispatch()
-
   const itemsToSearchFilms = useSelector((state) => state.searchSlice.items);
 
   function addRatingClass(rating) {
@@ -22,7 +20,7 @@ const SearchCart = () => {
 
 
   return (
-    <div className="cart">
+    <div className={itemsToSearchFilms.length > 0 ? 'cart' : 'cart none'} >
       <div className="cart__wrapper">
         {itemsToSearchFilms.map((cartElem, index) => {
           const { posterUrl, nameRu, nameEn, countryes, year, rating, description } = cartElem;
@@ -30,7 +28,7 @@ const SearchCart = () => {
             <div key={index} className="cart__item">
               <div className="cart__item-top">
               <img src={posterUrl} alt="poster" />
-              <p className="cart__content-description">{description}</p>
+              <p className="cart__content-description">{description ? description : 'Описание отсутствует :('}</p>
               </div>
               <div className="cart__content">
                 <div className="cart__content-rating">

@@ -5,8 +5,6 @@ const initialState = {
   items: [],
 };
 
-
-
 export const searchSlice = createSlice({
   name: 'search',
   initialState,
@@ -14,9 +12,10 @@ export const searchSlice = createSlice({
     setSearchValue: (state, action) => {
       state.searchValue = action.payload;
     },
-    setSearchFilm:(state, action) => {
-        state.items = action.payload
+    setSearchFilm: (state, action) => {
+      state.items = action.payload;
     },
+
   },
 });
 

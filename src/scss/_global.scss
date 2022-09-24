@@ -32,12 +32,12 @@ body {
 
 .main {
   height: 100vh;
-  position: relative;
+  // position: relative;
   .to-bottom {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    bottom: 90px;
+    // position: absolute;
+    // width: 100%;
+    // height: auto;
+    // bottom: 90px;
   }
 }
 
@@ -46,8 +46,14 @@ body {
   display: none;
   max-width: 50%;
 }
-
-.sliders__wrapper-bottom{
-  // position: absolute;
+.sliders__wrapper{
+  transition: all 9s;
+  &-bottom{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+  }
 }
+
 

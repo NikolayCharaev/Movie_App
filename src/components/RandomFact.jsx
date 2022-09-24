@@ -19,7 +19,6 @@ const RandomFact = () => {
   const randomFilmText = useSelector(
     (state) => state.randomFact.randomItemWrapper.itemFact,
   ).replace(/( |<([^>]+)>)/gi, ' ');
-  console.log(randomFilmText);
 
   function arrayRandElement(arr) {
     var rand = Math.floor(Math.random() * arr.length);
@@ -30,6 +29,8 @@ const RandomFact = () => {
     435, 329, 326, 3498, 448, 312, 328, 535341, 342, 42664, 679486, 258687, 2360, 476, 111543,
     279102, 447301, 361, 370, 474,
   ];
+
+
   const resultRandomFilmId = arrayRandElement(allFIlmsId);
 
   async function setAllItemsId() {
@@ -78,8 +79,7 @@ const RandomFact = () => {
   }
 
   useEffect(() => {
-    setAllItemsId();
-
+    // setAllItemsId();
     setFactToRandomFilm();
     setImageToRandomFilm();
   }, []);
@@ -87,13 +87,16 @@ const RandomFact = () => {
   return (
     <div className="interesting">
       <div className="interesting__wrapper">
-        <h1 className='interesting__title'>Интересно</h1>
-        <div className="interesting__item">
-          <div className="interesting__item-img">
-          <img src={randomFilmImage} alt="" />
-          </div>
-          <div className="interesting__item-text">
-            <p>{randomFilmText}</p>
+        <h1 className="interesting__title">Интересно</h1>
+        <div
+          className="interesting__item"
+          style={{
+            backgroundImage: `url(${randomFilmImage})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'top-center',
+          }}>
+            <div className="interesting__item-text">
+              <p>{randomFilmText}</p>
           </div>
         </div>
       </div>
