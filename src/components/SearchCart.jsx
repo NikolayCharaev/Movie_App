@@ -49,7 +49,7 @@ const SearchCart = () => {
         // height: '100%',
         backgroundImage: `url(${bigBackgrond})`,
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'top left',
+        backgroundPosition: 'top -80px left',
         backgroundSize: 'cover',
       }}>
       {/* {console.log('BIG', bigBackgrond)} */}

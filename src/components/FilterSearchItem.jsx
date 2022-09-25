@@ -33,7 +33,6 @@ const FilterSearchItem = () => {
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: 'top-center',
                 }}>
-                {/* <img src={posterUrl !== `https://kinopoiskapiunofficial.tech/images/posters/kp/${kinopoiskId}/.jpg` ? posterUrl : null} alt="poster" /> */}
                 </div>
                 <div className="cart__content">
                   <div className="cart__content-rating">

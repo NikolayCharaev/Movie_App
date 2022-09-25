@@ -30,7 +30,6 @@ const RandomFact = () => {
     279102, 447301, 361, 370, 474,
   ];
 
-
   const resultRandomFilmId = arrayRandElement(allFIlmsId);
 
   async function setAllItemsId() {
@@ -56,8 +55,8 @@ const RandomFact = () => {
           'X-API-KEY': process.env.REACT_APP_KEY,
         },
       })
-      .then((res) => {
-        dispatch(setRandomFactText(res.data.items[0].text));
+      .then( async (res) => {
+        dispatch(await setRandomFactText(res.data.items[0].text));
       })
       .catch((err) => console.log(err));
   }
@@ -95,8 +94,8 @@ const RandomFact = () => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top-center',
           }}>
-            <div className="interesting__item-text">
-              <p>{randomFilmText}</p>
+          <div className="interesting__item-text">
+            <p>{randomFilmText}</p>
           </div>
         </div>
       </div>
