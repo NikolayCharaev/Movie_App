@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Movie_App/static/css/main.d0ec984d.css",
+    "main.js": "/Movie_App/static/js/main.8e7bbb72.js",
+    "static/media/nature-2.gif": "/Movie_App/static/media/nature-2.96c5b6311cdf95cc6f08.gif",
+    "static/media/nature-1.gif": "/Movie_App/static/media/nature-1.2067ff7f2e0782faf21f.gif",
+    "static/media/loading.gif": "/Movie_App/static/media/loading.70c757bec3befe136e3e.gif",
+    "static/media/logo.png": "/Movie_App/static/media/logo.b1e26974b0a0b2dfdca2.png",
+    "static/media/app__bg.png": "/Movie_App/static/media/app__bg.5fe5b7ca6ef1b88b8236.png",
+    "static/media/slick.svg": "/Movie_App/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Movie_App/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Movie_App/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Movie_App/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Movie_App/index.html",
+    "main.d0ec984d.css.map": "/Movie_App/static/css/main.d0ec984d.css.map",
+    "main.8e7bbb72.js.map": "/Movie_App/static/js/main.8e7bbb72.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0ec984d.css",
+    "static/js/main.8e7bbb72.js"
+  ]
+}
