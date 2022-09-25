@@ -41,6 +41,10 @@ body {
   }
 }
 
+.pt-50{
+  // margin-top: 50px;
+  padding-top: 50px;
+}
 
 .width-50{
   display: none;
@@ -66,4 +70,11 @@ body {
     &:hover{
         background-color: rgb(145, 135, 235);
     }
+}
+
+.search__big-background{
+  height: 680px;
+}
+
+.test{
 }

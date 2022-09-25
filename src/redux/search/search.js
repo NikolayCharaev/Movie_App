@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   searchValue: '',
   items: [],
+  bigBackground: ''
 };
 
 export const searchSlice = createSlice({
@@ -15,9 +16,12 @@ export const searchSlice = createSlice({
     setSearchFilm: (state, action) => {
       state.items = action.payload;
     },
+    setBigBackground: (state, action) => {
+      state.bigBackground = action.payload
+    }
 
   },
 });
 
-export const { setSearchValue, setSearchFilm } = searchSlice.actions;
+export const { setSearchValue, setSearchFilm, setBigBackground } = searchSlice.actions;
 export default searchSlice.reducer;

@@ -2,9 +2,14 @@
   width: 50%;
   &__wrapper {
     text-align: center;
+
   }
 
   &__item-box {
+    background-color: rgb(13, 25, 59);
+    padding: 10px;
+    border-radius: 5px 5px 0 0 ;
+    border-bottom: 1px solid #000;
     p {
       margin-bottom: 10px;
     }

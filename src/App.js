@@ -5,28 +5,24 @@ import Premieres from './components/Premieres';
 import SearchCart from './components/SearchCart';
 import RandomFact from './components/RandomFact';
 import FilterSearchFilm from './components/FilterSearchFilm';
-import Test from './components/Test';
-
 
 function App() {
   return (
     <>
       <Header />
-      <div className='main'>
-        <div className="container">
+      <div className="main">
           <SearchCart />
-        </div>
         <div className="sliders__wrapper">
-        <Premieres />
+          <Premieres />
+        </div>
         <div className="container__big">
-        <div className="sliders__wrapper-bottom">
-        <RandomFact/>
-        <FilterSearchFilm/>
-        </div>
-        </div>
+          <div className="sliders__wrapper-bottom">
+            <RandomFact />
+            <FilterSearchFilm />
+          </div>
         </div>
       </div>
-      <Test/>
+
     </>
   );
 }
