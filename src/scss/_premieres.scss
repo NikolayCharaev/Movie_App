@@ -5,11 +5,53 @@
         flex-direction: column;
         justify-content: space-between;
     }
+    &__title{
+        @media(max-width: 918px) {
+            font-size: 14px;
+        }
+    }
 
     .premieres__cart{
         img{
             max-width: 300px;
             max-height: 300px;
+
+
+
+            @media(max-width: 1188px) {
+                width: 200px;
+            }
+
+            @media(max-width: 918px) {
+                width: 120px;
+            }
+            @media(max-width: 553px) {
+                width: 100px;
+            }
+            @media(max-width: 484px) {
+                width: 60px;
+            }
+            @media(max-width: 400px) {
+                width: 40px;
+            }
+        }
+
+        @media(max-width: 1188px) {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        @media(max-width: 918px) {
+            height: 170px;
+        }
+        @media(max-width: 553px) {
+            height: 140px;
+        }
+        @media(max-width: 484px) {
+            height: 80px;
+        }
+        @media(max-width: 400px) {
+            height: 55px;
         }
     }
 }

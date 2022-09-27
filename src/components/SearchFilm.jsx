@@ -36,7 +36,8 @@ const SearchFilm = () => {
   }, []);
 
   return (
-    <div className='search'>
+    // <div className='search'>
+    <>
       <input
         className="search__input"
         value={value}
@@ -52,7 +53,9 @@ const SearchFilm = () => {
         }}>
         найти
       </button>
-    </div>
+  
+    {/* </div> */}
+    </>
   );
 };
 

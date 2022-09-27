@@ -30,22 +30,120 @@ const Premieres = () => {
     newPremieres();
   }, []);
 
-  const settings = {
+  let settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
     slidesToShow: 9,
-    // slidesToScroll: 4,
     autoplay: true,
-    // autoplaySpeed: 200,
     speed: 2000,
     arrows: false,
-    autoplay: true,
-    speed: 5000,
+    responsive: [
+      {
+        breakpoint: 1727,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 8,
+          autoplay: true,
+          speed: 2000,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 1415,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 6,
+          autoplay: true,
+          speed: 2000,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 1188,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 6,
+          autoplay: true,
+          speed: 2000,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 994,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 7,
+          autoplay: false,
+          speed: 0,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 802,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 6,
+          autoplay: false,
+          speed: 0,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 669,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 5,
+          autoplay: false,
+          speed: 0,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 557,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 5,
+          autoplay: false,
+          speed: 0,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 484,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 6,
+          autoplay: false,
+          speed: 0,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          centerMode: true,
+          infinite: true,
+          slidesToShow: 6,
+          autoplay: false,
+          speed: 0,
+          arrows: false,
+        }
+      },
+    ]
+
   };
   return (
     <div className={searchFilmsData.length > 0 ? 'premieres to-bottom' : 'premieres'}>
-      <h1>новинки {year} года</h1>
+      <h1 className='premieres__title'>новинки {year} года</h1>
       <div className="premieres__wrapper">
         <Slider {...settings}>
           {premieresItems.map((elem, index) => {

@@ -28,6 +28,12 @@ body {
 .logo {
   width: 40px;
   height: 40px;
+
+
+
+  @media(max-width: 460px) {
+    display: none;
+  }
 }
 
 .main {
@@ -55,6 +61,8 @@ body {
   &-bottom{
     margin-top: 10px;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     padding-bottom: 100px;
   }
@@ -67,6 +75,11 @@ body {
     cursor: pointer;
     background-color: #fff;
     transition: background-color .2s ease-in;
+
+    @media(max-width: 473px) {
+      padding: 5px;
+      margin-left: 1px;
+    }
     &:hover{
         background-color: rgb(145, 135, 235);
     }
