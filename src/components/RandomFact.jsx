@@ -30,8 +30,8 @@ const RandomFact = () => {
     279102, 447301, 361, 370, 474,
   ];
 
-  const resultRandomFilmId = arrayRandElement(allFIlmsId);
-
+  // const allFIlmsId = useSelector((state) => state.randomFact.itemsId);
+  // const resultRandomFilmId = arrayRandElement(allFIlmsId);
   async function setAllItemsId() {
     await axios
       .get(
@@ -42,11 +42,15 @@ const RandomFact = () => {
           },
         },
       )
-      .then((res) => {
-        dispatch(setRandomFactId(res.data.films.map((id) => id.filmId)));
+      .then( (res) =>  {
+          dispatch(setRandomFactId(res.data.films.map((id) => id.filmId)));
       })
       .catch((err) => console.log(err));
   }
+
+  const resultRandomFilmId = arrayRandElement(allFIlmsId);
+
+  // console.log(resultRandomFilmId);
 
   async function setFactToRandomFilm() {
     await axios
@@ -55,8 +59,8 @@ const RandomFact = () => {
           'X-API-KEY': process.env.REACT_APP_KEY,
         },
       })
-      .then( async (res) => {
-        dispatch(await setRandomFactText(res.data.items[0].text));
+      .then( (res) => {
+        dispatch( setRandomFactText(res.data.items[0].text));
       })
       .catch((err) => console.log(err));
   }
@@ -78,7 +82,7 @@ const RandomFact = () => {
   }
 
   useEffect(() => {
-    // setAllItemsId();
+    setAllItemsId();
     setFactToRandomFilm();
     setImageToRandomFilm();
   }, []);

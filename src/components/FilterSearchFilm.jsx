@@ -84,7 +84,7 @@ const FilterSearchFilm = () => {
               onChange={(e) => dispatch(setRating(e.target.value))}
             />
           </div>
-          <button
+          <button type='submit'
             className="search__button"
             onClick={() => {
               getFilterSearchFilm();

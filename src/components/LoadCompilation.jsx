@@ -4,10 +4,11 @@ import nature__two from '../images/nature-2.gif';
 import loading from '../images/loading.gif';
 import { useSelector, useDispatch } from 'react-redux';
 import { setToggleButtonClick } from '../redux/filterSearchFilms/filterSearchFilms';
+import staticImage from '../images/filter_static.gif'
 
 const LoadCompilation = () => {
   const buttonClickLoaded = useSelector((state) => state.filterSearchFilms.buttonClick);
-  const loadArr = [nature__one, nature__two];
+  // const loadArr = [nature__one, nature__two];
   
   function arrayRandElement(arr) {
     let rand = Math.floor(Math.random() * arr.length);
@@ -17,7 +18,7 @@ const LoadCompilation = () => {
     <div className="load__wrapper">
       {!buttonClickLoaded ? (
         <>
-          <img src={arrayRandElement(loadArr)} alt="" />
+          <img src={staticImage} alt="" />
           <p className="load__wrapper-text">Подберем лучшие фильмы для вас :)</p>
         </>
       ) : (
