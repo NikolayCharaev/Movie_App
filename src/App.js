@@ -13,12 +13,12 @@ function App() {
       <div className="main">
           <SearchCart />
         <div className="sliders__wrapper">
-          <Premieres />
+          {/* <Premieres /> */}
         </div>
         <div className="container__big">
           <div className="sliders__wrapper-bottom">
-            <RandomFact />
-            <FilterSearchFilm />
+            {/* <RandomFact /> */}
+            {/* <FilterSearchFilm /> */}
           </div>
         </div>
       </div>
