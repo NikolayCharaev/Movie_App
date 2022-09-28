@@ -9,16 +9,16 @@ import FilterSearchFilm from './components/FilterSearchFilm';
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="main">
-          <SearchCart />
+          {/* <SearchCart /> */}
         <div className="sliders__wrapper">
           {/* <Premieres /> */}
         </div>
         <div className="container__big">
           <div className="sliders__wrapper-bottom">
             {/* <RandomFact /> */}
-            {/* <FilterSearchFilm /> */}
+            <FilterSearchFilm />
           </div>
         </div>
       </div>
