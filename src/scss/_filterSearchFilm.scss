@@ -1,15 +1,32 @@
 .filter {
   width: 50%;
   order: -1;
+
+  @media (max-width: 1780px) {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   &__wrapper {
     text-align: center;
 
+    @media (max-width: 1780px) {
+      width: 1200px;
+    }
+    @media (max-width: 1237px) {
+      width: 1000px;
+    }
+    @media (max-width: 1032px) {
+      width: 800px;
+    }
   }
-
   &__item-box {
     background-color: rgb(13, 25, 59);
     padding: 10px;
-    border-radius: 5px 5px 0 0 ;
+    border-radius: 5px 5px 0 0;
     border-bottom: 1px solid #000;
     p {
       margin-bottom: 10px;
@@ -20,8 +37,55 @@
     align-items: center;
 
     button {
-      // margin-right: 80px;
       padding: 10px 40px;
+      @media (max-width: 816px) {
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 1780px) {
+      min-width: 1200px;
+    }
+    @media (max-width: 1237px) {
+      min-width: 1000px;
+    }
+
+    @media (max-width: 1032px) {
+      min-width: 800px;
+    }
+
+    @media (max-width: 816px) {
+      min-width: 650px;
+    }
+    @media (max-width: 676px) {
+      font-size: 10px;
+      min-width: 600px;
+      input {
+        max-width: 50px;
+      }
+    }
+
+    @media (max-width: 676px) {
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 604px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: flex-end;
+      min-width: 500px;
+      // width: 200px;
+
+      button {
+        width: 100px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      min-width: 370px;
     }
   }
   &__item-select {
@@ -32,6 +96,9 @@
       border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 4px;
     }
+    @media (max-width: 604px) {
+      margin-bottom: 5px;
+    }
   }
   &__item-year {
     max-width: 300px;
@@ -39,6 +106,13 @@
       width: 100px;
       margin-left: 5px;
     }
-   
+  }
+  &__item-slider {
+    @media (max-width: 604px) {
+      span {
+        max-width: 100px;
+        padding: 0;
+      }
+    }
   }
 }

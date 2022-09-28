@@ -7,12 +7,23 @@
   
     &-text{
         width: 900px !important;
+
     }
 
     img{
         width: 900px;
         border-radius: 0 0 5px 5px ;
         height: 100%;
+
+        @media(max-width: 1706px) {
+            min-width: 900px;
+        }
+
+        // @media (max-width: 520px) {
+        //     min-width: 370px;
+        //   }
+
+      
     }
     &-text{
 
@@ -24,7 +35,35 @@
         background-color: rgba(0, 0, 0, 0.5);
         text-align: center;
         padding: 50px 0;
+
+        @media (max-width: 1780px) {
+            min-width: 100%;
+        }
+
+        @media (max-width: 816px) {
+            left: -120px;
+          }
+
+          @media (max-width: 604px) {
+            left: -200px;
+          }
+
+          @media (max-width: 520px) {
+              left: 0px;
+          }
     }
+
+
+
+      @media (max-width: 816px) {
+        // min-width: 600px;
+      }
+
+      @media (max-width: 604px) {
+        // min-width: 500px;
+      }
+
+
 
 
 }

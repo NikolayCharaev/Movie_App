@@ -65,6 +65,18 @@ body {
     align-items: center;
     justify-content: space-between;
     padding-bottom: 100px;
+
+    @media(max-width: 1780px) {
+      justify-content: center;
+
+    }
+
+    @media (max-width: 816px) {
+      h1{
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+  }
   }
 }
 .search__button{
