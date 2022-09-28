@@ -1,4 +1,4 @@
-DEMO : 
+Demo : 
 https://nikolaycharaev.github.io/Movie_App/
 
 # Getting Started with Create React App
