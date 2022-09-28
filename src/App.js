@@ -9,15 +9,15 @@ import FilterSearchFilm from './components/FilterSearchFilm';
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <div className="main">
-          {/* <SearchCart /> */}
+          <SearchCart />
         <div className="sliders__wrapper">
-          {/* <Premieres /> */}
+          <Premieres />
         </div>
         <div className="container__big">
           <div className="sliders__wrapper-bottom">
-            {/* <RandomFact /> */}
+            <RandomFact />
             <FilterSearchFilm />
           </div>
         </div>
