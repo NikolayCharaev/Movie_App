@@ -97,6 +97,9 @@ const RandomFact = () => {
             backgroundImage: `url(${randomFilmImage})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top-center',
+            backgroundSize: 'cover'
+
+            
           }}>
           <div className="interesting__item-text">
             <p>{randomFilmText}</p>
