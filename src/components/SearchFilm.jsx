@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import {Button} from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchValue, setSearchFilm } from '../redux/search/search';
 
@@ -46,13 +47,15 @@ const SearchFilm = () => {
         placeholder="поиск фильма..."
         onKeyPress={buttonPress}
       />
-      <button
+      <Button
+        sx={{padding: "9px", marginLeft: "5px"}}
         className="search__button"
+        variant="contained"
         onClick={() => {
           newFilms();
         }}>
         найти
-      </button>
+      </Button>
   
     {/* </div> */}
     </>

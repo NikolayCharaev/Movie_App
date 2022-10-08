@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 // import { setCartClassText } from '../redux/search/search';
-import {Button } from '@mui/material'
+import { Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { setBigBackground } from '../redux/search/search';
-import { setSearchFilm } from '../redux/search/search';
+import { setSearchFilm, setSearchValue } from '../redux/search/search';
 
 const SearchCart = () => {
   const dispatch = useDispatch();
@@ -82,10 +82,16 @@ const SearchCart = () => {
                 </div>
               );
             })}
-   
           </div>
-          <Button className='button__close' variant="contained" onClick={() => {dispatch(setSearchFilm([]))}}>Закрыть</Button>
-
+          <Button
+            className="button__close"
+            variant="contained"
+            onClick={() => {
+              dispatch(setSearchFilm([]));
+              dispatch(setSearchValue(''));
+            }}>
+            Закрыть
+          </Button>
         </div>
       </div>
     </div>

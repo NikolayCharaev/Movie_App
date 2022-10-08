@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { Box, Slider } from '@mui/material';
+import { Box, Slider, Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import FilterSearchItem from './FilterSearchItem';
 import LoadCompilation from './LoadCompilation';
@@ -84,14 +84,15 @@ const FilterSearchFilm = () => {
               onChange={(e) => dispatch(setRating(e.target.value))}
             />
           </div>
-          <button type='submit'
+          <Button type='submit'
             className="search__button"
+            variant="contained"
             onClick={() => {
               getFilterSearchFilm();
               dispatch(setToggleButtonClick());
             }}>
             поиск
-          </button>
+          </Button>
         </div>
       </div>
       {allFilterFilms.length > 0 ? <FilterSearchItem /> : <LoadCompilation />}
