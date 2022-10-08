@@ -93,6 +93,7 @@
     max-height: 511px;
     // width: 100%;
     overflow: scroll;
+    max-width: 900px;
 
     &__item {
       grid-template-columns: repeat(3, 1fr);
@@ -105,7 +106,7 @@
       .cart__item {
         margin-left: 0;
         width: 100%;
-        min-width: 390px;
+        // min-width: 390px;
 
         @media (max-width: 1237px) {
           min-width: 323px;

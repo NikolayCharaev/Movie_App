@@ -18,12 +18,15 @@
   &__wrapper {
     display: flex;
     justify-content: center;
+    overflow: scroll;
+    max-height: 700px;
+    padding-bottom: 30px;
     // align-items: center;
 
 
     @media(max-width:716px) {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(3,1fr);
       // grid-gap: 20px;
       grid-row-gap: 20px;
       justify-items: center;
@@ -31,7 +34,13 @@
       
     }
 
+    @media(max-width:626px) {
+      grid-template-columns: repeat(2,1fr);
+    }
 
+    @media(max-width:450px) {
+      grid-template-columns: repeat(1,1fr);
+    }
   }
   &__item {
     margin-left: 20px;
@@ -51,6 +60,10 @@
   @media(max-width:716px) {
     min-width: 183px;
 
+  }
+
+  @media(max-width:626px) {
+    min-width: 290px;
   }
     &-top {
       position: relative;
@@ -144,6 +157,11 @@
 
   @media(max-width:716px) {
     height: 800px;
+  }
+
+
+  @media(max-width:450px) {
+    height: 1000px;
   }
 }
 
