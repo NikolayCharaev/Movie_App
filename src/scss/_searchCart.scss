@@ -2,6 +2,13 @@
   // margin-top: 50px;
   margin-bottom: 150px;
 
+  .button__close{
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+
   @media(max-width: 1360px) {
     margin-bottom: 0;
     display: flex;
@@ -21,6 +28,7 @@
       grid-row-gap: 20px;
       justify-items: center;
       align-items: center;
+      
     }
 
 
@@ -117,8 +125,11 @@
     align-items: center;
     margin-bottom: 20px;
   }
+
+
 }
 // rating
+
 
 .search__big-background{ 
   @media(max-width: 1360px) {
@@ -159,3 +170,5 @@
   border-radius: 50%;
   border: 1px solid yellow;
 }
+
+
