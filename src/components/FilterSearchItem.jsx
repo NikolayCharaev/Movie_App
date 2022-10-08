@@ -1,8 +1,11 @@
 import React from 'react'
 import {useSelector, useDispatch} from "react-redux"
+import { setPage, setAllFilms } from '../redux/filterSearchFilms/filterSearchFilms'
+
 
 const FilterSearchItem = () => {
     const allFilterFilms = useSelector((state) => state.filterSearchFilms.arrAllFilms)
+    const dispatch = useDispatch()
 
   function addRatingClass(rating) {
     if (rating >= 8 || rating > 7) {
@@ -17,6 +20,7 @@ const FilterSearchItem = () => {
   }
   return (
     <div className='compilation'>
+      
         <div className="compilation__item">
             {allFilterFilms.filter(elem => {
               if (elem.nameRu && elem.ratingKinopoisk !== null){
@@ -43,9 +47,12 @@ const FilterSearchItem = () => {
   
                     <p className="cart__country">{countryes}</p>
                     <p className="cart__year">{year}</p>
+                  
                   </div>
                 </div>
+               
               </div>
+              
             )
             })}
         </div>

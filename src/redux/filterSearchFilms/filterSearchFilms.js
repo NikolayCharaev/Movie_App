@@ -6,7 +6,7 @@ const initialState = {
   releaseMin: '19',
   releaseMax: '20',
   minRating: '8',
-  page: 2,
+  page: 3,
   buttonClick: false
 };
 

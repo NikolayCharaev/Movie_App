@@ -8,12 +8,6 @@ import staticImage from '../images/filter_static.gif'
 
 const LoadCompilation = () => {
   const buttonClickLoaded = useSelector((state) => state.filterSearchFilms.buttonClick);
-  // const loadArr = [nature__one, nature__two];
-  
-  function arrayRandElement(arr) {
-    let rand = Math.floor(Math.random() * arr.length);
-    return arr[rand];
-  }
   return (
     <div className="load__wrapper">
       {!buttonClickLoaded ? (
@@ -27,7 +21,9 @@ const LoadCompilation = () => {
           <p className="load__wrapper-text">идет загрузка...</p>
         </>
       )}
+
     </div>
+  
   );
 };
 

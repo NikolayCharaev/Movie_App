@@ -84,7 +84,8 @@ const FilterSearchFilm = () => {
               onChange={(e) => dispatch(setRating(e.target.value))}
             />
           </div>
-          <Button type='submit'
+          <Button
+            type="submit"
             className="search__button"
             variant="contained"
             onClick={() => {
@@ -95,7 +96,28 @@ const FilterSearchFilm = () => {
           </Button>
         </div>
       </div>
-      {allFilterFilms.length > 0 ? <FilterSearchItem /> : <LoadCompilation />}
+      {allFilterFilms.length > 0 ? (
+        <>
+          <FilterSearchItem />
+          {
+            <div className='center '>
+              <Button
+                sx={{ marginTop: '20px',padding: '10px 40px' }}
+                variant="contained"
+                onClick={() => {
+                  getFilterSearchFilm();
+                  dispatch(setPage());
+                  dispatch(setAllFilms([]));
+  
+                }}>
+                еще
+              </Button>
+            </div>
+          }
+        </>
+      ) : (
+        <LoadCompilation />
+      )}
     </div>
   );
 };
