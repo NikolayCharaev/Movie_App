@@ -118,12 +118,12 @@ const FilterSearchFilm = () => {
           {
             <div className="center ">
               <Button
-                disabled={true}
+                // disabled={true}
                 sx={{ marginTop: '20px', padding: '10px 40px' }}
                 variant="contained"
                 onClick={() => {
-                  getFilterSearchFilm();
                   dispatch(setPage());
+                  getFilterSearchFilm();
                   dispatch(setAllFilms([]));
                 }}>
                 еще
