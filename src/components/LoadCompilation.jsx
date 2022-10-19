@@ -12,12 +12,12 @@ const LoadCompilation = () => {
     <div className="load__wrapper">
       {!buttonClickLoaded ? (
         <>
-          <img src={staticImage} alt="" />
+          <img src={nature__one} alt="" />
           <p className="load__wrapper-text">Подберем лучшие фильмы для вас :)</p>
         </>
       ) : (
         <>
-          <img className='loading' src={loading} alt="" />
+          <img className='loading' src={nature__one} alt="" />
           <p className="load__wrapper-text">идет загрузка...</p>
         </>
       )}

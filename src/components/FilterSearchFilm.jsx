@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+
+import nature from '../images/nature-1.gif'
+
 import axios from 'axios';
 import { Box, Slider, Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
