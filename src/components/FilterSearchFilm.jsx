@@ -12,6 +12,7 @@ import {
   setRating,
   setPage,
   setAllFilms,
+  changeInputInfo,
 } from '../redux/filterSearchFilms/filterSearchFilms';
 
 const FilterSearchFilm = () => {
@@ -21,6 +22,8 @@ const FilterSearchFilm = () => {
   const filmRating = useSelector((state) => state.filterSearchFilms.minRating);
   const page = useSelector((state) => state.filterSearchFilms.page);
   const allFilterFilms = useSelector((state) => state.filterSearchFilms.arrAllFilms);
+
+  const buttonState = useSelector((state) => state.filterSearchFilms.buttonState);
 
   const dispatch = useDispatch();
 
@@ -60,14 +63,26 @@ const FilterSearchFilm = () => {
           <div className="filter__item-year">
             <p>год релиза</p>
             <input
+              onKeyUp={(e) => {
+                e.target.value = e.target.value.replace(/[^\d]/g, '');
+              }}
               type="number"
               placeholder="мин"
-              onChange={(e) => dispatch(setReleaseMin(e.target.value))}
+              onChange={(e) => {
+                dispatch(setReleaseMin(e.target.value));
+                dispatch(changeInputInfo());
+              }}
             />
             <input
+              onKeyUp={(e) => {
+                e.target.value = e.target.value.replace(/[^\d]/g, '');
+              }}
               type="number"
               placeholder="макс"
-              onChange={(e) => dispatch(setReleaseMax(e.target.value))}
+              onChange={(e) => {
+                dispatch(setReleaseMax(e.target.value));
+                dispatch(changeInputInfo());
+              }}
             />
           </div>
           <div className="filter__item-slider">
@@ -86,6 +101,7 @@ const FilterSearchFilm = () => {
           </div>
           <Button
             type="submit"
+            disabled={buttonState ? false : true}
             className="search__button"
             variant="contained"
             onClick={() => {
@@ -100,15 +116,15 @@ const FilterSearchFilm = () => {
         <>
           <FilterSearchItem />
           {
-            <div className='center '>
+            <div className="center ">
               <Button
-                sx={{ marginTop: '20px',padding: '10px 40px' }}
+                disabled={true}
+                sx={{ marginTop: '20px', padding: '10px 40px' }}
                 variant="contained"
                 onClick={() => {
                   getFilterSearchFilm();
                   dispatch(setPage());
                   dispatch(setAllFilms([]));
-  
                 }}>
                 еще
               </Button>

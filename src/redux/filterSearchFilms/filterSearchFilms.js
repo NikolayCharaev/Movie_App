@@ -3,11 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   arrAllFilms: [],
   sortBy: 'RATING',
-  releaseMin: '19',
-  releaseMax: '20',
+  releaseMin: '',
+  releaseMax: '',
   minRating: '8',
   page: 3,
-  buttonClick: false
+  buttonClick: false,
+  buttonState: false,
 };
 
 export const filterSearchFilms = createSlice({
@@ -29,16 +30,32 @@ export const filterSearchFilms = createSlice({
     setPage: (state) => {
       state.page = state.page + 1;
     },
-    setAllFilms: (state,action) => {
-        state.arrAllFilms = action.payload
+    setAllFilms: (state, action) => {
+      state.arrAllFilms = action.payload;
     },
     setToggleButtonClick: (state) => {
-      state.buttonClick = !state.buttonClick
-
-    }
+     
+      state.buttonClick = !state.buttonClick;
+    },
+    changeInputInfo: (state) => {
+      if (state.releaseMin !== '' && state.releaseMax !== '' && Number(state.releaseMin) <=  Number(state.releaseMax)){
+        state.buttonState = true
+      }else {
+        state.buttonState = false
+      }
+       
+    },
   },
 });
 
-export const { setSortByFilm, setReleaseMin, setReleaseMax, setRating, setPage, setAllFilms, setToggleButtonClick } =
-  filterSearchFilms.actions;
+export const {
+  setSortByFilm,
+  setReleaseMin,
+  setReleaseMax,
+  setRating,
+  setPage,
+  setAllFilms,
+  setToggleButtonClick,
+  changeInputInfo,
+} = filterSearchFilms.actions;
 export default filterSearchFilms.reducer;
