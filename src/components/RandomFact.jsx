@@ -1,24 +1,23 @@
 import React from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import InfoFilterFilm from './InfoFilterFilm';
+import RandomFactCart from './RandomFactCart';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setRandomFactId,
   setRandomFactText,
   setRandomFactImage,
-  setRandomId,
 } from '../redux/randomFactToFilm/randomFact';
 
 const RandomFact = () => {
   const dispatch = useDispatch();
-  const itemsId = useSelector((state) => state.randomFact.itemsId);
+  const arrFilterFilm = useSelector((state) => state.infoToFilterFilm.infoToFilterFilmArr);
   const randomFilmImage = useSelector((state) => state.randomFact.randomItemWrapper.itemImageUrl);
   const randomFilmText = useSelector(
     (state) => state.randomFact.randomItemWrapper.itemFact,
   ).replace(/( |<([^>]+)>)/gi, ' ');
+  const flagContent = useSelector((state) => state.infoToFilterFilm.toggleFlag);
 
   function arrayRandElement(arr) {
     var rand = Math.floor(Math.random() * arr.length);
@@ -30,8 +29,6 @@ const RandomFact = () => {
     279102, 447301, 361, 370, 474,
   ];
 
-  // const allFIlmsId = useSelector((state) => state.randomFact.itemsId);
-  // const resultRandomFilmId = arrayRandElement(allFIlmsId);
   async function setAllItemsId() {
     await axios
       .get(
@@ -42,15 +39,13 @@ const RandomFact = () => {
           },
         },
       )
-      .then( (res) =>  {
-          dispatch(setRandomFactId(res.data.films.map((id) => id.filmId)));
+      .then((res) => {
+        dispatch(setRandomFactId(res.data.films.map((id) => id.filmId)));
       })
       .catch((err) => console.log(err));
   }
 
   const resultRandomFilmId = arrayRandElement(allFIlmsId);
-
-  // console.log(resultRandomFilmId);
 
   async function setFactToRandomFilm() {
     await axios
@@ -59,8 +54,8 @@ const RandomFact = () => {
           'X-API-KEY': process.env.REACT_APP_KEY,
         },
       })
-      .then( (res) => {
-        dispatch( setRandomFactText(res.data.items[0].text));
+      .then((res) => {
+        dispatch(setRandomFactText(res.data.items[0].text));
       })
       .catch((err) => console.log(err));
   }
@@ -80,31 +75,26 @@ const RandomFact = () => {
       })
       .catch((err) => console.log(err));
   }
-
   useEffect(() => {
-    setAllItemsId();
     setFactToRandomFilm();
     setImageToRandomFilm();
   }, []);
 
+  console.log(arrFilterFilm);
   return (
     <div className="interesting">
       <div className="interesting__wrapper">
-        <h1 className="interesting__title">Интересно</h1>
-        <div
-          className="interesting__item"
-          style={{
-            backgroundImage: `url(${randomFilmImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'top-center',
-            backgroundSize: 'cover'
-
-            
-          }}>
-          <div className="interesting__item-text">
-            <p>{randomFilmText}</p>
-          </div>
-        </div>
+        {flagContent ? (
+          <>
+            <h1 className="interesting__title">О фильме</h1>
+            <InfoFilterFilm />
+          </>
+        ) : (
+          <>
+            <h1 className="interesting__title">Интересно</h1>
+            <RandomFactCart randomFilmImage={randomFilmImage} randomFilmText={randomFilmText} />
+          </>
+        )}
       </div>
     </div>
   );

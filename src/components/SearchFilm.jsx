@@ -24,7 +24,6 @@ const SearchFilm = () => {
               },
             })
             .then((res) => {
-                console.log(res)
                  dispatch(setSearchFilm(res.data.films))
               })
             .catch((err) => console.log(err));

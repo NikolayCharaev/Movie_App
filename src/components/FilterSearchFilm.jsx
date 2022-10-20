@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import nature from '../images/nature-1.gif'
+import nature from '../images/nature-1.gif';
 
 import axios from 'axios';
 import { Box, Slider, Button } from '@mui/material';
@@ -29,7 +29,6 @@ const FilterSearchFilm = () => {
   const buttonState = useSelector((state) => state.filterSearchFilms.buttonState);
 
   const dispatch = useDispatch();
-
   async function getFilterSearchFilm() {
     await axios
       .get(

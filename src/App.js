@@ -5,6 +5,7 @@ import Premieres from './components/Premieres';
 import SearchCart from './components/SearchCart';
 import RandomFact from './components/RandomFact';
 import FilterSearchFilm from './components/FilterSearchFilm';
+import InfoFilterFilm from './components/InfoFilterFilm';
 
 function App() {
   return (
