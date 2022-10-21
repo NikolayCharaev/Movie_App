@@ -3,19 +3,46 @@ import { useSelector } from 'react-redux';
 
 const InfoFilterFilm = () => {
   const arrFilterFilm = useSelector((state) => state.infoToFilterFilm.infoToFilterFilmArr);
+
+  function addRatingClass(rating) {
+    if (rating >= 8 || rating > 7) {
+      return 'cart__rating green';
+    } else if (rating <= 6 || rating <= 7) {
+      return 'cart__rating yellow';
+    } else if (rating <= 4) {
+      return 'cart__rating red';
+    } else if (rating === 'null') {
+      return 'none';
+    }
+  }
+
   return (
     <div>
       {arrFilterFilm.map((elem) => {
-        const { nameRu, description, posterUrl, ratingKinopoisk, year, kinopoiskId } = elem;
+        const {
+          nameRu,
+          description,
+          posterUrl,
+          ratingKinopoisk,
+          year,
+          kinopoiskId,
+          genres,
+          countries,
+        } = elem;
         return (
           <div className="info" key={kinopoiskId}>
             <div className="info__content">
-              <div className="info__content-cart">
-                <h1 className='info__cart-title'>{nameRu}</h1>
-                <p className='info__cart-description'>{description}</p>
-                <img className='info__cart-image' src={posterUrl} alt="#" />
-                <p className='info__cart-rating'>{ratingKinopoisk}</p>
-                <p className='info__cart-year'>{year}</p>
+              <div className="info__content-top">
+                  <img className="info__content-image" src={posterUrl} alt="#" />
+                  <p className={addRatingClass(ratingKinopoisk) + ' ' + 'info__content-rating'}>
+                    {ratingKinopoisk}
+                  </p>
+                  <h1 className="info__content-title">{nameRu} ({year})</h1>
+                  <p className="info__content-genres">{genres ? genres.map(genre => genre.genre + ',' ) : ''}</p>
+                  <p className="info__content-countries">Страны: {countries ? countries.map(countries => countries.country + ',' ) : ''}</p>
+              </div>
+              <div className="info__content-text">
+                <p className="info__content-description">{description}</p>
               </div>
             </div>
           </div>
