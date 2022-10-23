@@ -11,7 +11,6 @@ import { setToggleRandomComponentContent } from '../redux/infoToFilterFilm/infoT
 
 const FilterSearchItem = () => {
   const allFilterFilms = useSelector((state) => state.filterSearchFilms.arrAllFilms);
-  const filterFilmId = useSelector((state) => state.infoToFilterFilm.infoToFilterFilmId);
   const dispatch = useDispatch();
 
   function addRatingClass(rating) {

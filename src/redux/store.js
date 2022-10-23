@@ -4,6 +4,7 @@ import premieres from './premieres/premieres';
 import randomFact from './randomFactToFilm/randomFact';
 import filterSearchFilms from './filterSearchFilms/filterSearchFilms';
 import infoToFilterFilm from './infoToFilterFilm/infoToFilterFilm';
+import footageContent from './footage/footageContent';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     premieres: premieres,
     randomFact:randomFact,
     filterSearchFilms: filterSearchFilms,
-    infoToFilterFilm: infoToFilterFilm
+    infoToFilterFilm: infoToFilterFilm,
+    footageContent: footageContent
   },
 });

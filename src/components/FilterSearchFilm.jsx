@@ -126,7 +126,6 @@ const FilterSearchFilm = () => {
                 variant="contained"
                 onClick={() => {
                   dispatch(setPage());
-                  console.log(page);
                   getFilterSearchFilm(page);
                   dispatch(setAllFilms([]));
                 }}>

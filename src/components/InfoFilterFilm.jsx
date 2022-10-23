@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import Footage from './Footage';
 const InfoFilterFilm = () => {
   const arrFilterFilm = useSelector((state) => state.infoToFilterFilm.infoToFilterFilmArr);
 
@@ -33,18 +33,29 @@ const InfoFilterFilm = () => {
           <div className="info" key={kinopoiskId}>
             <div className="info__content">
               <div className="info__content-top">
-                  <img className="info__content-image" src={posterUrl} alt="#" />
-                  <p className={addRatingClass(ratingKinopoisk) + ' ' + 'info__content-rating'}>
-                    {ratingKinopoisk}
+                <img className="info__content-image" src={posterUrl} alt="#" />
+                <p className={addRatingClass(ratingKinopoisk) + ' ' + 'info__content-rating'}>
+                  {ratingKinopoisk}
+                </p>
+                <div className="info__content-bottom">
+                  <h1 className="info__content-title">
+                    {nameRu} ({year})
+                  </h1>
+                  <p className="info__content-genres">
+                   <span className='text-bold'>Жанры:</span>   {genres ? genres.map((genre) =>  genre.genre + ',') : ''}
                   </p>
-                  <h1 className="info__content-title">{nameRu} ({year})</h1>
-                  <p className="info__content-genres">{genres ? genres.map(genre => genre.genre + ',' ) : ''}</p>
-                  <p className="info__content-countries">Страны: {countries ? countries.map(countries => countries.country + ',' ) : ''}</p>
+                  <p className="info__content-countries">
+                  <span className='text-bold'>Страны:</span>  {countries ? countries.map((countries) => countries.country + ',') : ''}
+                  </p>
+                </div>
               </div>
               <div className="info__content-text">
-                <p className="info__content-description">{description}</p>
+                <h3 className='center'>Описание фильма</h3>
+                <p className="info__content-description">{description ? description : 'Нет описания :('}</p>
               </div>
+                  <Footage/>
             </div>
+      
           </div>
         );
       })}

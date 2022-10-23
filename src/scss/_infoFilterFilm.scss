@@ -1,23 +1,37 @@
 .info {
   max-width: 900px;
   height: 604px;
+  width: 800px;
   background-color: rgb(13, 25, 59);
   border-radius: 5px;
 
   &__content {
+    background-color: rgb(10, 19, 45);
     height: 100%;
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+
+    &-description{ 
+
+    }
     &-top {
+      padding: 10px;
+      margin:  0 auto;
       max-width: 300px;
       position: relative;
-      background-color: rgb(10, 19, 45);
+      background-color: rgb(16, 26, 51);
     }
     &-rating {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 15px;
+      left: 15px;
+    }
+    &-bottom{
+      margin-top: 40px;
     }
     &-title {
       font-size: 15px;
@@ -28,7 +42,14 @@
     }
 
     &-text {
-      max-width: 450px;
+      background-color: rgb(16, 26, 51);
+      padding: 0 10px;
+      overflow: scroll;
+      padding: 20px;
+      border-radius: 5px;
+      height: 350px;
+      width: 450px;
     }
   }
+
 }
