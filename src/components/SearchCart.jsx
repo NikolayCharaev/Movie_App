@@ -48,13 +48,11 @@ const SearchCart = () => {
       className={itemsToSearchFilms.length > 0 ? 'search__big-background' : 'none'}
       style={{
         width: '100%',
-        // height: '100%',
         backgroundImage: `url(${bigBackgrond})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'top -80px left',
         backgroundSize: 'cover',
       }}>
-      {/* {console.log('BIG', bigBackgrond)} */}
       <div className="container">
         <div className={itemsToSearchFilms.length > 0 ? 'cart pt-50' : 'cart none'}>
           <div className="cart__wrapper">

@@ -26,9 +26,9 @@ const FilterSearchItem = () => {
     }
   }
 
- async function getInfoFilterFilm() {
+ async function getInfoFilterFilm(id) {
    await axios
-      .get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${filterFilmId}`, {
+      .get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`, {
         headers: {
           'X-API-KEY': process.env.REACT_APP_KEY,
         },
@@ -65,7 +65,7 @@ const FilterSearchItem = () => {
                 className="cart__item"
                 onClick={ () => {
                   dispatch(sayToFilterFilmId(kinopoiskId));
-                  getInfoFilterFilm();
+                  getInfoFilterFilm(kinopoiskId);
                   dispatch(setToggleRandomComponentContent())
                 }}>
                 <div

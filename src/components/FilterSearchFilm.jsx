@@ -29,10 +29,11 @@ const FilterSearchFilm = () => {
   const buttonState = useSelector((state) => state.filterSearchFilms.buttonState);
 
   const dispatch = useDispatch();
-  async function getFilterSearchFilm() {
+
+  async function getFilterSearchFilm(pageNumber = 1) {
     await axios
       .get(
-        `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=${sortByFilm}&type=FILM&ratingFrom=${filmRating}&ratingTo=10&yearFrom=${releaseMin}&yearTo=${releaseMax}&page=${page}`,
+        `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=${sortByFilm}&type=FILM&ratingFrom=${filmRating}&ratingTo=10&yearFrom=${releaseMin}&yearTo=${releaseMax}&page=${pageNumber}`,
         {
           headers: {
             'X-API-KEY': process.env.REACT_APP_KEY,
@@ -125,7 +126,8 @@ const FilterSearchFilm = () => {
                 variant="contained"
                 onClick={() => {
                   dispatch(setPage());
-                  getFilterSearchFilm();
+                  console.log(page);
+                  getFilterSearchFilm(page);
                   dispatch(setAllFilms([]));
                 }}>
                 еще
@@ -134,6 +136,7 @@ const FilterSearchFilm = () => {
           }
         </>
       ) : (
+      
         <LoadCompilation />
       )}
     </div>

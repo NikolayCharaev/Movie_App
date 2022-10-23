@@ -6,7 +6,7 @@ const initialState = {
   releaseMin: '',
   releaseMax: '',
   minRating: '8',
-  page: 1,
+  page: 2,
   buttonClick: false,
   buttonState: false,
 };
@@ -28,7 +28,7 @@ export const filterSearchFilms = createSlice({
       state.minRating = action.payload;
     },
     setPage: (state) => {
-      state.page = state.page + 1;
+      ++state.page
     },
     setAllFilms: (state, action) => {
       state.arrAllFilms = action.payload;

@@ -80,7 +80,6 @@ const RandomFact = () => {
     setImageToRandomFilm();
   }, []);
 
-  console.log(arrFilterFilm);
   return (
     <div className="interesting">
       <div className="interesting__wrapper">
