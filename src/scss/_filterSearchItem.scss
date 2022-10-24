@@ -96,21 +96,20 @@
     max-width: 900px;
     // width: 1200px;
 
-
-    @media(max-width: 1780px) {
+    @media (max-width: 1780px) {
       min-width: 1200px;
     }
 
-    @media(max-width: 1237px) {
+    @media (max-width: 1237px) {
       min-width: 1000px;
     }
-    @media(max-width: 1032px) {
+    @media (max-width: 1032px) {
       min-width: 773px;
     }
-    @media(max-width: 816px) {
+    @media (max-width: 816px) {
       min-width: 640px;
     }
-    @media(max-width: 676px) {
+    @media (max-width: 676px) {
       width: 100%;
       max-width: 600px;
     }
@@ -156,11 +155,10 @@
           background-position: top center;
           background-size: cover;
 
-
-          @media(max-width:1032px) {
+          @media (max-width: 1032px) {
             min-height: 280px;
           }
-          @media(max-width:816px) {
+          @media (max-width: 816px) {
             min-height: 235px;
           }
           img {

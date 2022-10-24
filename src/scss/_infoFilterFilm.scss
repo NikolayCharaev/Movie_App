@@ -15,12 +15,9 @@
     padding: 20px;
     position: relative;
 
-    &-description{ 
-
-    }
     &-top {
       padding: 10px;
-      margin:  0 auto;
+      margin: 0 auto;
       max-width: 300px;
       position: relative;
       background-color: rgb(16, 26, 51);
@@ -30,7 +27,7 @@
       top: 15px;
       left: 15px;
     }
-    &-bottom{
+    &-bottom {
       margin-top: 40px;
     }
     &-title {
@@ -51,5 +48,4 @@
       width: 450px;
     }
   }
-
 }

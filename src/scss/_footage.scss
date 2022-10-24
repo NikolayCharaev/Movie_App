@@ -6,48 +6,38 @@
   height: 100px;
   margin: 10px;
 
-&__inner{
-   
-
-}
-
-&__content{
+  &__content {
     margin-top: 10px;
     overflow: scroll;
     height: 150px;
-    &-list{
-        // display: none;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        flex-wrap: wrap;
-  
+    &-list {
+      // display: none;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      flex-wrap: wrap;
     }
-    &-item{
-        margin-bottom: 2px;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border: 1px solid white;
-        transition: all .2s linear;
-        &:hover{
-            background-color: rgb(17, 31, 72);
-        }
+    &-item {
+      margin-bottom: 2px;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid white;
+      transition: all 0.2s linear;
+      &:hover {
+        background-color: rgb(17, 31, 72);
+      }
     }
 
-    &-link{
-        display: inline-block;
-        text-decoration: none;
-        color: inherit;
-        margin-left: 5px;
+    &-link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      margin-left: 5px;
     }
-}
-
- 
-
-
+  }
 }
