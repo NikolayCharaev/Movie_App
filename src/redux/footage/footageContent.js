@@ -11,6 +11,7 @@ export const footageContent = createSlice({
     setVideoElelemts: (state, action) => {
       state.allVideoItems = action.payload;
     },
+    
   },
 });
 

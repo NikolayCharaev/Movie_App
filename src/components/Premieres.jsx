@@ -5,6 +5,8 @@ import { setPremieres } from '../redux/premieres/premieres';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { sayToFilterFilmId, setToggleRandomComponentContent } from '../redux/infoToFilterFilm/infoToFilterFilm';
+import { sayInfoToFilterFilmArr } from '../redux/infoToFilterFilm/infoToFilterFilm';
 
 const Premieres = () => {
   const year = new Date().getFullYear();
@@ -30,15 +32,30 @@ const Premieres = () => {
     newPremieres();
   }, []);
 
+
+
+ async function getInfoFilterFilm(id) {
+  await axios
+     .get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`, {
+       headers: {
+         'X-API-KEY': process.env.REACT_APP_KEY,
+       },
+     })
+     .then((data) => {
+       dispatch(sayInfoToFilterFilmArr([data.data]));
+     })
+     .catch((err) => console.log(err));
+ }
+
   let settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
-    slidesToShow: 9,
+    slidesToShow: 8,
     slidesToScroll: 9,
     autoplay: true,
-    speed: 500,
-    autoplaySpeed: 1000,
+    speed: 1000,
+    autoplaySpeed: 3000,
     arrows: false,
     responsive: [
       {
@@ -52,7 +69,7 @@ const Premieres = () => {
           autoplaySpeed: 1000,
           speed: 2000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 1415,
@@ -65,7 +82,7 @@ const Premieres = () => {
           autoplaySpeed: 1000,
           speed: 2000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 1188,
@@ -78,7 +95,7 @@ const Premieres = () => {
           speed: 2000,
           autoplaySpeed: 1000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 994,
@@ -91,7 +108,7 @@ const Premieres = () => {
           speed: 2000,
           autoplaySpeed: 1000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 802,
@@ -104,7 +121,7 @@ const Premieres = () => {
           speed: 2000,
           autoplaySpeed: 1000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 669,
@@ -117,7 +134,7 @@ const Premieres = () => {
           autoplaySpeed: 1000,
           speed: 2000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 557,
@@ -130,7 +147,7 @@ const Premieres = () => {
           autoplaySpeed: 1000,
           speed: 2000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 484,
@@ -143,7 +160,7 @@ const Premieres = () => {
           autoplaySpeed: 1000,
           speed: 2000,
           arrows: false,
-        }
+        },
       },
       {
         breakpoint: 400,
@@ -156,19 +173,23 @@ const Premieres = () => {
           autoplaySpeed: 1000,
           speed: 2000,
           arrows: false,
-        }
+        },
       },
-    ]
-
+    ],
   };
   return (
     <div className={searchFilmsData.length > 0 ? 'premieres to-bottom' : 'premieres'}>
-      <h1 className='premieres__title'>новинки {year} года</h1>
+      <h1 className="premieres__title">новинки {year} года</h1>
       <div className="premieres__wrapper">
         <Slider {...settings}>
           {premieresItems.map((elem, index) => {
+            const {kinopoiskId} = elem
             return (
-              <div key={index} className="premieres__cart">
+              <div key={index} className="premieres__cart" onClick={() => {
+                dispatch(sayToFilterFilmId(kinopoiskId));
+                getInfoFilterFilm(kinopoiskId);
+                dispatch(setToggleRandomComponentContent())
+              }}>
                 <img src={elem.posterUrl} alt="" />
               </div>
             );

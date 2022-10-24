@@ -23,9 +23,13 @@ export const infoToFilterFilm = createSlice({
         }else {
             state.toggleFlag = false
         }
+    },
+    deleteFilArr: (state) => {
+      state.infoToFilterFilmArr = []
+      state.toggleFlag = false
     }
   },
 });
 
-export const { sayToFilterFilmId, sayInfoToFilterFilmArr,setToggleRandomComponentContent } = infoToFilterFilm.actions;
+export const { sayToFilterFilmId, sayInfoToFilterFilmArr,setToggleRandomComponentContent, deleteFilArr } = infoToFilterFilm.actions;
 export default infoToFilterFilm.reducer;

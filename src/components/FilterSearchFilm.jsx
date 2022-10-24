@@ -135,7 +135,6 @@ const FilterSearchFilm = () => {
           }
         </>
       ) : (
-      
         <LoadCompilation />
       )}
     </div>

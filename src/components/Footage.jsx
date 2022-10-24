@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { setVideoElelemts } from '../redux/footage/footageContent';
 import { useEffect } from 'react';
+import { Button } from '@mui/material';
+import { deleteFilArr } from '../redux/infoToFilterFilm/infoToFilterFilm';
 
 const Footage = () => {
   const itemId = useSelector((state) => state.infoToFilterFilm.infoToFilterFilmId);
@@ -41,28 +43,28 @@ const Footage = () => {
                     <a target='blank' className="footage__content-link" href={elem.url}>
                     {elem.name}
                     </a>
-                    {/* <p className='footage__content-description'>{elem.name}</p> */}
                   </i>
                 </li>
               );
             })}
-          </ul>
 
-          {/* <div className="footage__content-item" >
-            {allVideoItems.map((elem, name) => {
-              console.log(elem);
-              return (
-                <div className="content__wrapper-item" key={name}>
-                  <a className="content__wrapper-link" target="blank" href={elem.url}>
-                    {elem.name}
-                  </a>
-                </div>
-              );
-            })}
-          </div> */}
+          </ul>
         </div>
+
       </div>
+      <div className="footage__button">
+              <Button
+                // disabled={true}
+                sx={{ marginTop: '20px', padding: '10px 40px' }}
+                variant="contained"
+                onClick={() => {
+                    dispatch(deleteFilArr())
+                }}>
+                закрыть
+              </Button>
+            </div>
     </div>
+    
   );
 };
 
