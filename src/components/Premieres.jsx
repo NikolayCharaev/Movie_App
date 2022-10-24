@@ -137,12 +137,12 @@ const Premieres = () => {
         },
       },
       {
-        breakpoint: 557,
+        breakpoint: 553,
         settings: {
           centerMode: true,
           infinite: true,
-          slidesToShow: 5,
-          slidesToScroll: 5,
+          slidesToShow: 3,
+          slidesToScroll: 2,
           autoplay: true,
           autoplaySpeed: 1000,
           speed: 2000,
@@ -154,8 +154,8 @@ const Premieres = () => {
         settings: {
           centerMode: true,
           infinite: true,
-          slidesToShow: 6,
-          slidesToScroll: 6,
+          slidesToShow: 3,
+          slidesToScroll: 2,
           autoplay: true,
           autoplaySpeed: 1000,
           speed: 2000,
@@ -167,8 +167,8 @@ const Premieres = () => {
         settings: {
           centerMode: true,
           infinite: true,
-          slidesToShow: 6,
-          slidesToScroll: 6,
+          slidesToShow: 3,
+          slidesToScroll: 2,
           autoplay: true,
           autoplaySpeed: 1000,
           speed: 2000,
