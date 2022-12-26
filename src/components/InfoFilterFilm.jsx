@@ -36,7 +36,7 @@ const InfoFilterFilm = () => {
         return (
           <div className="info" key={kinopoiskId}>
             <div className="info__content">
-              {loading ? (
+              {!loading ? (
                 <Skeleton className='info-skeleton' width={600} height={596} />
               ) : (
                 <>
