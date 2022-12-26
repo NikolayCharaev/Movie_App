@@ -40,31 +40,27 @@ const Footage = () => {
               return (
                 <li className="footage__content-item" key={id}>
                   <i className="fa-brands fa-youtube">
-                    <a target='blank' className="footage__content-link" href={elem.url}>
-                    {elem.name}
+                    <a target="blank" className="footage__content-link" href={elem.url}>
+                      {elem.name}
                     </a>
                   </i>
                 </li>
               );
             })}
-
           </ul>
         </div>
-
       </div>
       <div className="footage__button">
-              <Button
-                // disabled={true}
-                sx={{ marginTop: '20px', padding: '10px 40px' }}
-                variant="contained"
-                onClick={() => {
-                    dispatch(deleteFilArr())
-                }}>
-                закрыть
-              </Button>
-            </div>
+        <Button
+          sx={{ marginTop: '20px', padding: '10px 40px' }}
+          variant="contained"
+          onClick={() => {
+            dispatch(deleteFilArr());
+          }}>
+          закрыть
+        </Button>
+      </div>
     </div>
-    
   );
 };
 

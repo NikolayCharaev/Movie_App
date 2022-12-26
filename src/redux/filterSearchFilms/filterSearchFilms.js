@@ -9,6 +9,7 @@ const initialState = {
   page: 2,
   buttonClick: false,
   buttonState: false,
+  loading : false
 };
 
 export const filterSearchFilms = createSlice({

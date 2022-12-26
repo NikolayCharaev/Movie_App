@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import {Button} from '@mui/material'
+import { Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchValue, setSearchFilm } from '../redux/search/search';
 
@@ -15,21 +15,23 @@ const SearchFilm = () => {
       dispatch(setSearchValue(e.target.value));
     }
   }
-    async function newFilms() {
-        if (value.length > 0) {
-            return await axios
-            .get(`https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${value}`, {
-              headers: {
-                'X-API-KEY': process.env.REACT_APP_KEY,
-              },
-            })
-            .then((res) => {
-                 dispatch(setSearchFilm(res.data.films))
-              })
-            .catch((err) => console.log(err));
-        }
-       
-      }
+  async function newFilms() {
+    if (value.length > 0) {
+      return await axios
+        .get(
+          `https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${value}`,
+          {
+            headers: {
+              'X-API-KEY': process.env.REACT_APP_KEY,
+            },
+          },
+        )
+        .then((res) => {
+          dispatch(setSearchFilm(res.data.films));
+        })
+        .catch((err) => console.log(err));
+    }
+  }
 
   useEffect(() => {
     newFilms();
@@ -47,7 +49,7 @@ const SearchFilm = () => {
         onKeyPress={buttonPress}
       />
       <Button
-        sx={{padding: "9px", marginLeft: "5px"}}
+        sx={{ padding: '9px', marginLeft: '5px' }}
         className="search__button"
         variant="contained"
         onClick={() => {
@@ -55,8 +57,8 @@ const SearchFilm = () => {
         }}>
         найти
       </Button>
-  
-    {/* </div> */}
+
+      {/* </div> */}
     </>
   );
 };

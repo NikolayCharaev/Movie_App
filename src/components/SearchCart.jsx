@@ -50,7 +50,6 @@ const SearchCart = () => {
         width: '100%',
         backgroundImage: `url(${bigBackgrond})`,
         backgroundRepeat: 'no-repeat',
-        // backgroundPosition: 'top -80px left',
         backgroundSize: 'cover',
       }}>
       <div className="container">

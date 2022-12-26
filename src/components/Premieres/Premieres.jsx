@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPremieres } from '../redux/premieres/premieres';
+import { setPremieres } from '../../redux/premieres/premieres';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
+import Skeleton from '@mui/material/Skeleton';
 import 'slick-carousel/slick/slick-theme.css';
-import { sayToFilterFilmId, setToggleRandomComponentContent } from '../redux/infoToFilterFilm/infoToFilterFilm';
-import { sayInfoToFilterFilmArr } from '../redux/infoToFilterFilm/infoToFilterFilm';
+import {
+  sayToFilterFilmId,
+  setToggleRandomComponentContent,
+} from '../../redux/infoToFilterFilm/infoToFilterFilm';
+import { sayInfoToFilterFilmArr } from '../../redux/infoToFilterFilm/infoToFilterFilm';
 
 const Premieres = () => {
   const year = new Date().getFullYear();
+  const loading = useSelector((state) => state.premieres.loading);
   const dispatch = useDispatch();
   const premieresItems = useSelector((state) => state.premieres.items);
   const searchFilmsData = useSelector((state) => state.searchSlice.items);
@@ -32,20 +37,18 @@ const Premieres = () => {
     newPremieres();
   }, []);
 
-
-
- async function getInfoFilterFilm(id) {
-  await axios
-     .get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`, {
-       headers: {
-         'X-API-KEY': process.env.REACT_APP_KEY,
-       },
-     })
-     .then((data) => {
-       dispatch(sayInfoToFilterFilmArr([data.data]));
-     })
-     .catch((err) => console.log(err));
- }
+  async function getInfoFilterFilm(id) {
+    await axios
+      .get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`, {
+        headers: {
+          'X-API-KEY': process.env.REACT_APP_KEY,
+        },
+      })
+      .then((data) => {
+        dispatch(sayInfoToFilterFilmArr([data.data]));
+      })
+      .catch((err) => console.log(err));
+  }
 
   let settings = {
     className: 'center',
@@ -178,22 +181,33 @@ const Premieres = () => {
     ],
   };
   return (
-    <div className={searchFilmsData.length > 0 ? 'premieres to-bottom' : 'premieres'}>
+    <div className={searchFilmsData.length > 0 ? 'premieres to-bottom' : 'premieres '}>
       <h1 className="premieres__title">новинки {year} года</h1>
       <div className="premieres__wrapper">
         <Slider {...settings}>
-          {premieresItems.map((elem, index) => {
-            const {kinopoiskId} = elem
-            return (
-              <div key={index} className="premieres__cart" onClick={() => {
-                dispatch(sayToFilterFilmId(kinopoiskId));
-                getInfoFilterFilm(kinopoiskId);
-                dispatch(setToggleRandomComponentContent())
-              }}>
-                <img src={elem.posterUrl} alt="" />
-              </div>
-            );
-          })}
+          {!loading
+            ? [...Array(10)].map((elem, key) => {
+                return (
+                  <div key={key} className="premieres__cart">
+                    <Skeleton variant="rectangular" width={210} height={248} />
+                  </div>
+                );
+              })
+            : premieresItems.map((elem, index) => {
+                const { kinopoiskId } = elem;
+                return (
+                  <div
+                    key={index}
+                    className="premieres__cart"
+                    onClick={() => {
+                      dispatch(sayToFilterFilmId(kinopoiskId));
+                      getInfoFilterFilm(kinopoiskId);
+                      dispatch(setToggleRandomComponentContent());
+                    }}>
+                    <img src={elem.posterUrl} alt="" />
+                  </div>
+                );
+              })}
         </Slider>
       </div>
     </div>

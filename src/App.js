@@ -1,7 +1,7 @@
 import './scss/styles.scss';
 
 import Header from './components/Header';
-import Premieres from './components/Premieres';
+import Premieres from './components/Premieres/Premieres';
 import SearchCart from './components/SearchCart';
 import RandomFact from './components/RandomFact';
 import FilterSearchFilm from './components/FilterSearchFilm';
@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <div className="main">
-          <SearchCart />
+        <SearchCart />
         <div className="sliders__wrapper">
           <Premieres />
         </div>
@@ -21,7 +21,6 @@ function App() {
           </div>
         </div>
       </div>
-
     </>
   );
 }

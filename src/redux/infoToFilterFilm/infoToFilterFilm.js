@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   infoToFilterFilmId: '',
   infoToFilterFilmArr: [],
-  toggleFlag: false
+  toggleFlag: false,
+  loading: false
 };
 
 export const infoToFilterFilm = createSlice({
@@ -16,6 +17,7 @@ export const infoToFilterFilm = createSlice({
 
     sayInfoToFilterFilmArr: (state, action) => {
       state.infoToFilterFilmArr = action.payload;
+      state.loading = true
     },
     setToggleRandomComponentContent: (state) => {
         if (state.infoToFilterFilmId.length !== '') {
